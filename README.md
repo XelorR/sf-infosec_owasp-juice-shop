@@ -34,13 +34,11 @@ git clone git@github.com:juice-shop/juice-shop.git
 cd juice-shop
 ```
 
-##### First scan ------------------------------
+##### [First scan](./results-semgrep.json) ------------------------------
 
 <details>
 
 <summary>first scan, figuring out how does it work</summary>
-
-[first results](./results-semgrep.json)
 
 ```bash
 semgrep scan --config=auto --json -o results-semgrep.json
