@@ -36,13 +36,13 @@ cd juice-shop
 
 ##### [First scan](./results-semgrep.json) ------------------------------
 
-<details>
-
-<summary>first scan, figuring out how does it work</summary>
-
 ```bash
 semgrep scan --config=auto --json -o results-semgrep.json
 ```
+
+<details>
+
+<summary>first scan, figuring out how does it work</summary>
 
 check
 ```bash
