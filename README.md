@@ -36,7 +36,10 @@ cd juice-shop
 
 <details>
 
-<summary>[first scan](./results-semgrep.json), figuring out how does it work</summary>
+<summary>first scan, figuring out how does it work</summary>
+
+[first results](./results-semgrep.json)
+
 ```bash
 semgrep scan --config=auto --json -o results-semgrep.json
 ```
