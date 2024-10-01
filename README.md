@@ -176,4 +176,118 @@ cat results-semgrep.json | jq '.results[65]'
 semgrep --config "p/owasp-top-ten" --json -o results-top10owasp-semgrep.json
 ```
 
+<details>
+<summary>example result</summary>
+``` bash
+cat results-top10owasp-semgrep.json | jq '.results[28]'
+```
+
+``` json
+{
+  "check_id": "javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing",
+  "end": {
+    "col": 103,
+    "line": 272,
+    "offset": 12297
+  },
+  "extra": {
+    "engine_kind": "OSS",
+    "fingerprint": "c2c7cc5931e16da7a7bc9e2fc1e98093f4c2df0159cda8677f10cd4747a7e125dbcf1faf73b825dc6d1908c737a9c354fc272b9f0bb4f3620c4a5909de3fd6be_3",
+    "is_ignored": false,
+    "lines": "  app.use('/support/logs', serveIndexMiddleware, serveIndex('logs', { icons: true, view: 'details' })) // vuln-code-snippet vuln-line accessLogDisclosureChallenge",
+    "message": "Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.",
+    "metadata": {
+      "category": "security",
+      "confidence": "MEDIUM",
+      "cwe": [
+        "CWE-548: Exposure of Information Through Directory Listing"
+      ],
+      "impact": "MEDIUM",
+      "interfile": true,
+      "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+      "likelihood": "HIGH",
+      "owasp": [
+        "A06:2017 - Security Misconfiguration",
+        "A01:2021 - Broken Access Control"
+      ],
+      "references": [
+        "https://www.npmjs.com/package/serve-index",
+        "https://www.acunetix.com/blog/articles/directory-listing-information-disclosure/"
+      ],
+      "semgrep.dev": {
+        "rule": {
+          "origin": "community",
+          "r_id": 22552,
+          "rule_id": "x8UqEb",
+          "rv_id": 834060,
+          "url": "https://semgrep.dev/playground/r/GxTDEXG/javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing",
+          "version_id": "GxTDEXG"
+        }
+      },
+      "shortlink": "https://sg.run/DX2G",
+      "source": "https://semgrep.dev/r/javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing",
+      "subcategory": [
+        "vuln"
+      ],
+      "technology": [
+        "express"
+      ],
+      "vulnerability_class": [
+        "Mishandled Sensitive Information"
+      ]
+    },
+    "metavars": {
+      "$APP": {
+        "abstract_content": "app",
+        "end": {
+          "col": 6,
+          "line": 272,
+          "offset": 12200
+        },
+        "propagated_value": {
+          "svalue_abstract_content": "express()",
+          "svalue_end": {
+            "col": 22,
+            "line": 105,
+            "offset": 4885
+          },
+          "svalue_start": {
+            "col": 13,
+            "line": 105,
+            "offset": 4876
+          }
+        },
+        "start": {
+          "col": 3,
+          "line": 272,
+          "offset": 12197
+        }
+      },
+      "$SERVEINDEX": {
+        "abstract_content": "serveIndex",
+        "end": {
+          "col": 60,
+          "line": 272,
+          "offset": 12254
+        },
+        "start": {
+          "col": 50,
+          "line": 272,
+          "offset": 12244
+        }
+      }
+    },
+    "severity": "WARNING",
+    "validation_state": "NO_VALIDATOR"
+  },
+  "path": "server.ts",
+  "start": {
+    "col": 3,
+    "line": 272,
+    "offset": 12197
+  }
+}
+```
+</details>
+
 ## Report
