@@ -34,7 +34,7 @@ git clone git@github.com:juice-shop/juice-shop.git
 cd juice-shop
 ```
 
-##### first scan
+##### First scan ------------------------------
 
 <details>
 
@@ -172,7 +172,7 @@ cat results-semgrep.json | jq '.results[65]'
 
 </details>
 
-##### [second scan](./results-top10owasp-semgrep.json) - owasp top 10
+##### [Second scan](./results-top10owasp-semgrep.json) - owasp top 10 ------------------------------
 
 ``` bash
 semgrep --config "p/owasp-top-ten" --json -o results-top10owasp-semgrep.json
