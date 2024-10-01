@@ -34,7 +34,7 @@ git clone git@github.com:juice-shop/juice-shop.git
 cd juice-shop
 ```
 
-scan
+first scan, figuring out how does it work
 ```bash
 semgrep scan --config=auto --json -o results-semgrep.json
 ```
@@ -161,6 +161,12 @@ cat results-semgrep.json | jq '.results[65]'
     "offset": 3942
   }
 }
+```
+
+second scan, owasp top 10
+
+``` bash
+semgrep --config "p/owasp-top-ten" --json -o results-top10owasp-semgrep.json
 ```
 
 [semgrep results](./results-semgrep.json)
