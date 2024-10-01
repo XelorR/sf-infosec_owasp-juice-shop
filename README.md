@@ -64,7 +64,7 @@ example error
 cat results-semgrep.json | jq '.errors[31]'
 ```
 
-```
+```json
 {
   "code": 2,
   "level": "warn",
