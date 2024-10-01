@@ -44,6 +44,21 @@ check
 cat results.json | jq . | vim -
 ```
 
+high lever, keys
+
+``` bash
+cat results-semgrep.json | jq 'keys[]'
+```
+
+```
+"errors"
+"interfile_languages_used"
+"paths"
+"results"
+"skipped_rules"
+"version"
+```
+
 [semgrep results](./results-semgrep.json)
 
 ## Report
