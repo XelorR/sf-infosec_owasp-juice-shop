@@ -45,7 +45,6 @@ cat results.json | jq . | vim -
 ```
 
 high level, keys
-
 ``` bash
 cat results-semgrep.json | jq 'keys[]'
 ```
@@ -57,6 +56,23 @@ cat results-semgrep.json | jq 'keys[]'
 "results"
 "skipped_rules"
 "version"
+```
+
+example error
+
+``` bash
+cat results-semgrep.json | jq '.errors[31]'
+```
+
+```
+{
+  "code": 2,
+  "level": "warn",
+  "message": "Timeout when running javascript.lang.security.insecure-object-assign.insecure-object-assign on frontend/src/assets/private/three.js:\n ",
+  "path": "frontend/src/assets/private/three.js",
+  "rule_id": "javascript.lang.security.insecure-object-assign.insecure-object-assign",
+  "type": "Timeout"
+}
 ```
 
 [semgrep results](./results-semgrep.json)
