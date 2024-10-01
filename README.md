@@ -44,4 +44,6 @@ check
 cat results.json | jq . | vim -
 ```
 
+[semgrep results](./results-semgrep.json)
+
 ## Report
