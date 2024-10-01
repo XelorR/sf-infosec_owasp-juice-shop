@@ -44,7 +44,7 @@ check
 cat results.json | jq . | vim -
 ```
 
-high lever, keys
+high level, keys
 
 ``` bash
 cat results-semgrep.json | jq 'keys[]'
