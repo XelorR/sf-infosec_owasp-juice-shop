@@ -36,12 +36,12 @@ cd juice-shop
 
 scan
 ```bash
-semgrep scan --config=auto --json -o results.json
+semgrep scan --config=auto --json -o results-semgrep.json
 ```
 
 check
 ```bash
-cat results.json | jq . | vim -
+cat results-semgrep.json | jq . | vim -
 ```
 
 high level, keys
