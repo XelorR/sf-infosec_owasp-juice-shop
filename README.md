@@ -305,4 +305,21 @@ cat results-semgrep.json | jq '.results[65] | keys[]'
 
 </details>
 
+trying to flatten json
+``` python
+
+import json
+from pprint import pprint
+from flatten import flatten
+
+with open("./results-top10owasp-semgrep.json", "r") as f:
+    semgrep = json.load(f)
+
+# test_record = semgrep['results'][19]
+# pprint(flatten(test_record))
+
+semgrep_results_flatten = [flatten(r) for r in semgrep["results"]]
+pprint(semgrep_results_flatten[19])
+```
+
 ## Report
