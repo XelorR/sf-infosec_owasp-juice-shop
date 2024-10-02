@@ -305,7 +305,7 @@ cat results-semgrep.json | jq '.results[65] | keys[]'
 
 </details>
 
-trying to flatten json (using [flatten.py](./results-top10owasp-semgrep.json))
+trying to flatten json (using [flatten.py](./flatten.py))
 ``` python
 import json
 from pprint import pprint
