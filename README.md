@@ -5,23 +5,29 @@
 ### Отчёт должен иметь следующую структуру:
 
 - [ ] Введение — описание приложения.
-- [ ] Результаты статического анализа — общие, можно без детализации.
-- [ ] Уязвимости из OWASP Top-10, обнаруженные в результате статического анализа, — минимум пять штук.
+- [x] Результаты статического анализа — общие, можно без детализации.
+- [x] Уязвимости из OWASP Top-10, обнаруженные в результате статического анализа, — минимум пять штук.
 - [ ] Демонстрация эксплуатации трёх уязвимостей из OWASP Top-10 — скриншоты эксплуатации, проведённой с помощью инструмента Burp Suite. Выбор этих уязвимостей остаётся на ваше усмотрение.
 - [ ] Рекомендации по устранению к трём продемонстрированным уязвимостям — можно взять основу с сайта MITRE ATT&CK под найденные CWE.
 
 ### В отчёте обязательно должны присутствовать:
 
-- [ ] Скриншоты (минимум два) или выгрузка результатов статического сканирования в пункте 2.
+- [x] Скриншоты (минимум два) или [выгрузка результатов статического сканирования](./results-top10owasp-semgrep.json) в пункте 2.
 - [ ] Список уязвимостей из OWASP Top-10 с доказательствами в пункте 3 (в виде скриншотов, найденных анализатором уязвимостей; отдельно от остальных уязвимостей).
 - [ ] Скриншоты из Burp Suite в пункте 4, а также обязательно текстовое описание эксплуатации: что необходимо сделать, чтобы воспроизвести уязвимость.
 
 ### Tools:
 
-- [ ] `semgrep login` and authorize with github
+- [ ] semgrep login
 - [ ] burp suite community
 
-#### Semgrep command log
+## Report
+
+### Intro - app description
+
+TODO
+
+### SAST analysis via SemGrep
 
 install semgrep
 ```bash
@@ -34,7 +40,7 @@ git clone git@github.com:juice-shop/juice-shop.git
 cd juice-shop
 ```
 
-##### [First scan](./results-semgrep.json) ------------------------------
+#### [First scan](./results-semgrep.json) ------------------------------
 
 ```bash
 semgrep scan --config=auto --json -o results-semgrep.json
@@ -170,7 +176,7 @@ cat results-semgrep.json | jq '.results[65]'
 
 </details>
 
-##### [Second scan](./results-top10owasp-semgrep.json) - owasp top 10 ------------------------------
+#### [Second scan](./results-top10owasp-semgrep.json) - owasp top 10 ------------------------------
 
 ``` bash
 semgrep --config "p/owasp-top-ten" --json -o results-top10owasp-semgrep.json
@@ -642,7 +648,18 @@ df[cols_to_save.values()].to_csv("./results-top10owasp-semgrep-compact.csv", ind
 df[cols_to_save.values()].to_excel("./results-top10owasp-semgrep-compact.xlsx", index=False)
 ```
 
-- [./results-top10owasp-semgrep-compact.csv](./results-top10owasp-semgrep-compact.csv)
-- [./results-top10owasp-semgrep-compact.xlsx](./results-top10owasp-semgrep-compact.xlsx)
+[./results-top10owasp-semgrep-compact.csv](./results-top10owasp-semgrep-compact.csv)
 
-## Report
+#### 5 most severe findings with highest likelihood and confidence:**
+
+[./results-top10owasp-semgrep-compact.xlsx](./results-top10owasp-semgrep-compact.xlsx)
+
+![](./SAST-5-findings.png)
+
+### DAST with Burp Suite
+
+TODO
+
+### Recommendations
+
+TODO
