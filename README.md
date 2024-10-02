@@ -333,7 +333,12 @@ transposed version
 ``` python
 import pandas as pd
 
-pd.read_csv("./results-top10owasp-semgrep.csv").T.to_csv("./results-top10owasp-semgrep-transposed.csv", index=False)
+df = pd.read_csv("./results-top10owasp-semgrep.csv")
+df.T.to_csv("./results-top10owasp-semgrep-transposed.csv")
+
+print(df.T[19])
 ```
+
+[./results-top10owasp-semgrep-transposed.csv](./results-top10owasp-semgrep-transposed.csv)
 
 ## Report
