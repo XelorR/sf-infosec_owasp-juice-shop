@@ -329,4 +329,11 @@ df.to_csv("./results-top10owasp-semgrep.csv", index=False)
 
 [./results-top10owasp-semgrep.csv](./results-top10owasp-semgrep.csv)
 
+transposed version
+``` python
+import pandas as pd
+
+pd.read_csv("./results-top10owasp-semgrep.csv").T.to_csv("./results-top10owasp-semgrep-transposed.csv", index=False)
+```
+
 ## Report
