@@ -289,6 +289,20 @@ cat results-top10owasp-semgrep.json | jq '.results[28]'
   }
 }
 ```
+
+viewing result's keys
+``` bash
+cat results-semgrep.json | jq '.results[65] | keys[]'
+```
+
+``` json
+"check_id"
+"end"
+"extra"
+"path"
+"start"
+```
+
 </details>
 
 ## Report
