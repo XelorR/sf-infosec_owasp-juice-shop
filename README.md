@@ -305,20 +305,28 @@ cat results-semgrep.json | jq '.results[65] | keys[]'
 
 </details>
 
-trying to flatten json (using [flatten.py](./flatten.py))
+converting to csv (using [flatten.py](./flatten.py))
 ``` python
 import json
 from pprint import pprint
+
+import pandas as pd
 from flatten import flatten
 
 with open("./results-top10owasp-semgrep.json", "r") as f:
     semgrep = json.load(f)
 
-# test_record = semgrep['results'][19]
-# pprint(flatten(test_record))
-
 semgrep_results_flatten = [flatten(r) for r in semgrep["results"]]
-pprint(semgrep_results_flatten[19])
+flattenier = []
+for r in semgrep_results_flatten:
+    flattenier += r
+
+df = pd.DataFrame(flattenier)
+df.to_csv("./results-top10owasp-semgrep.csv", index=False)
+
+# pprint(df.T[19])
 ```
+
+[./results-top10owasp-semgrep.csv](./results-top10owasp-semgrep.csv)
 
 ## Report
