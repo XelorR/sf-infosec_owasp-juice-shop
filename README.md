@@ -607,6 +607,7 @@ pprint(df.T[19].to_dict())
 [./results-top10owasp-semgrep-transposed.csv](./results-top10owasp-semgrep-transposed.csv)
 
 filtering cols
+
 ``` python
 from pprint import pprint
 import pandas as pd
@@ -635,6 +636,13 @@ cols_to_save = {
     'extra.metavars.$1.abstract_content': 'abstract_content_1',
     'extra.metavars.$SQLSTR.abstract_content': 'sql_str',
 }
+
+df.rename(columns=cols_to_save, inplace=True)
+df[cols_to_save.values()].to_csv("./results-top10owasp-semgrep-compact.csv", index=False)
+df[cols_to_save.values()].to_excel("./results-top10owasp-semgrep-compact.xlsx", index=False)
 ```
+
+- [./results-top10owasp-semgrep-compact.csv](./results-top10owasp-semgrep-compact.csv)
+- [./results-top10owasp-semgrep-compact.xlsx](./results-top10owasp-semgrep-compact.xlsx)
 
 ## Report
