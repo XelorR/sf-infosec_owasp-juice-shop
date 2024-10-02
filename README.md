@@ -613,7 +613,28 @@ import pandas as pd
 
 df = pd.read_csv("./results-top10owasp-semgrep.csv")
 
-pprint(df.T[19].to_dict())
+cols_to_save = {
+    'check_id': 'check_id',
+    'extra.dataflow_trace.intermediate_vars.location.path': 'location.path',
+    'extra.fingerprint': 'fingerprint',
+    'extra.is_ignored': 'is_ignored',
+    'extra.lines': 'lines',
+    'extra.message': 'message',
+    'extra.metadata.category': 'category',
+    'extra.metadata.confidence': 'confidence',
+    'extra.metadata.impact': 'impact',
+    'extra.metadata.likelihood': 'likelihood',
+    'extra.severity': 'severity',
+    'extra.validation_state':  'validation_state',
+    'extra.metadata.license': 'license',
+    'extra.metadata.cwe.': 'cwe',
+    'extra.metadata.owasp.': "owasp",
+    'extra.metadata.references.': 'references',
+    'extra.metadata.semgrep.dev.rule.url': 'semgrep.dev.rule.url',
+    'extra.metadata.vulnerability_class.': 'vulnerability_class',
+    'extra.metavars.$1.abstract_content': 'abstract_content_1',
+    'extra.metavars.$SQLSTR.abstract_content': 'sql_str',
+}
 ```
 
 ## Report
