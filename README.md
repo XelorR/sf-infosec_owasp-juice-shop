@@ -662,4 +662,6 @@ TODO
 
 ### Recommendations
 
-TODO
+- implement 2FA for users and privileged accounts
+- properly escape fields to avoid SQL injections
+- ensure user validation on comments posting
