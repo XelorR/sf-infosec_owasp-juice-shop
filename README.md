@@ -686,9 +686,9 @@ df[cols_to_save.values()].to_excel("./results-top10owasp-semgrep-compact.xlsx", 
 
 ![](2024-12-22_17-10_1.png)
 
-![](2024-12-22_17-14.png)
-
 #### Scoreboard
+
+![](2024-12-22_17-14.png)
 
 ![](2024-12-22_17-15.png)
 
