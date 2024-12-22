@@ -658,10 +658,61 @@ df[cols_to_save.values()].to_excel("./results-top10owasp-semgrep-compact.xlsx", 
 
 ### DAST with Burp Suite
 
-TODO
+#### SQL injection
+
+![](2024-12-22_16-54.png)
+
+![](2024-12-22_16-57.png)
+
+![](2024-12-22_16-58.png)
+
+![](2024-12-22_17-01.png)
+
+![](2024-12-22_17-02.png)
+
+![](2024-12-22_17-03.png)
+
+![](2024-12-22_17-05.png)
+
+![](2024-12-22_17-06.png)
+
+![](2024-12-22_17-06_1.png)
+
+![](2024-12-22_17-08.png)
+
+![](2024-12-22_17-08_1.png)
+
+![](2024-12-22_17-10.png)
+
+![](2024-12-22_17-10_1.png)
+
+![](2024-12-22_17-14.png)
+
+#### Scoreboard
+
+![](2024-12-22_17-15.png)
+
+#### DOM based XSS
+
+`<iframe src="javascript:alert(xss)">`. This script is designed to execute JavaScript directly from the iframe source attribute, triggering an XSS alert.
+
+![](2024-12-22_17-19.png)
+
+![](2024-12-22_17-19_1.png)
+
+#### Broken access control
+
+Finding some sandboxes, if any
+
+![](2024-12-22_17-21_1.png)
+
+![](2024-12-22_17-21.png)
+
+![](2024-12-22_17-22.png)
 
 ### Recommendations
 
 - implement 2FA for users and privileged accounts
 - properly escape fields to avoid SQL injections
 - ensure user validation on comments posting
+- use modern framework which automatickly handle [XSS](https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html)
