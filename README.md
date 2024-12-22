@@ -704,9 +704,9 @@ df[cols_to_save.values()].to_excel("./results-top10owasp-semgrep-compact.xlsx", 
 
 Finding some sandboxes, if any
 
-![](2024-12-22_17-21_1.png)
-
 ![](2024-12-22_17-21.png)
+
+![](2024-12-22_17-21_1.png)
 
 ![](2024-12-22_17-22.png)
 
